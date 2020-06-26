@@ -83,8 +83,8 @@ sass:
     style: compressed # possible values: nested expanded compact compressed
 
 # Outputting
-permalink: /:categories/:title/
-# permalink: /:categories/:title.html
+# permalink: /:categories/:title/
+permalink: /:categories/:title.html
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -134,7 +134,6 @@ tag_archive:
 include:
   - .htaccess
   - _pages
-  - _posts
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -194,6 +193,12 @@ collections:
   authors:
     output: true
   articles:
+    output: true
+    permalink: /:collection/:path.html
+  # posts: # can override posts
+  #   output: true
+  #   permalink: /:collection/:path.html
+  drafts: # can override drafs
     output: true
     permalink: /:collection/:path.html
 
