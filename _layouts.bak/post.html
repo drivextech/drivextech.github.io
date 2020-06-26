@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<h1>{{ page.title }}</h1>
+
+<p class="view">by <a href="{{ author.url }}">{{ page.author | default: site.author }}</a></p>
+
+<div class="container">
+  <section id="main_content">
+    {{ content }}
+  </section>
+</div>
+
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}
+
+<div class="c-pagination">
+  {% if page.previous %}
+  <div>
+      <h3>Previous</h3>
+      <p>{{page.previous.title}}</p>
+      <p><a  class="btn" href="{{ site.baseurl }}{{page.previous.url}}">Read Post</a></p>
+  </div>
+  {% endif %}
+  {% if page.next %}
+  <div>
+      <h3>Up Next</h3>
+      <p>{{page.next.title}}</p>
+      <p><a  class="btn" href="{{ site.baseurl }}{{page.next.url}}">Read Post</a></p>
+  </div>
+  {% endif %}
+</div>

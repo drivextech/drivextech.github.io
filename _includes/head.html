@@ -1,10 +1,128 @@
-<!-- <head> -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>{{ page.title }}</title>
-  {% feed_meta %}
-  {% seo %}
-<!-- </head> -->
+<meta charset="utf-8">
+
+{% include seo.html %}
+
+<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+{% if site.head_scripts %}
+  {% for script in site.head_scripts %}
+    {% if script contains "://" %}
+      {% capture script_path %}{{ script }}{% endcapture %}
+    {% else %}
+      {% capture script_path %}{{ script | relative_url }}{% endcapture %}
+    {% endif %}
+    <script src="{{ script_path }}"></script>
+  {% endfor %}
+{% endif %}
+
+
+<!-- for mathjax support -->
+{% if page.mathjax %}
+<!-- <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML">
+</script> -->
+<!-- <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_SVG">
+</script> -->
+<!-- <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script> -->
+<!-- <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+</script> -->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<!-- <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js">
+</script> -->
+<script>
+  MathJax = {
+    options: {
+      renderActions: {
+        addMenu: [0, '', ''],
+        // [mathjax 3 compatibility](https://github.com/gettalong/kramdown/issues/651)
+        // [Upgrading from v2.7 to v3 -- renderActions.find override breaks rendering](https://github.com/mathjax/MathJax/issues/2199#issuecomment-531553133)
+        // find: [10, function (doc) {
+        findScripts: [11, function (doc) {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/);
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+            const text = document.createTextNode('');
+            node.parentNode.replaceChild(text, node);
+            math.start = {node: text, delim: '', n: 0};
+            math.end = {node: text, delim: '', n: 0};
+            doc.math.push(math);
+          }
+        }, '']
+      }
+    },
+    // loader: {load: ["input/tex", "output/X"]},
+    // loader: {load: ["input/tex-base", "output/X"]},
+    // loader: {load: ["input/tex-full", "output/X"]},
+    // loader: {load: ["input/tex", "output/chtml"]},
+    loader: {load: ["input/tex", "output/svg"]},
+    tex: {
+      packages: ['base', 'require', 'ams'],        // extensions to use
+      // packages: [
+      //   {'[+]': ['base', 'require', 'ams', 'newcommand', 'autoload', 'noUndefined', 'configMacros']},
+      //   {'[-]': []},
+      // ],        // extensions to use
+      inlineMath: [              // start/end delimiter pairs for in-line math
+        ['$', '$'],
+        ['\\(', '\\)']
+      ],
+      displayMath: [             // start/end delimiter pairs for display math
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ],
+      processEscapes: true,      // use \$ to produce a literal dollar sign
+      processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+      digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/ // pattern for recognizing numbers
+    }
+  };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showMathMenu: false,
+    <!-- extensions: ["tex2jax.js"], -->
+    extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    CommonHTML: { linebreaks: { automatic: true } },
+    "HTML-CSS": { availableFonts: ["TeX"], linebreaks: { automatic: true } },
+    SVG: { linebreaks: { automatic: true } },
+    <!-- jax: ["input/TeX", "output/CommonHTML"] -->
+    <!-- jax: ["input/TeX", "output/HTML-CSS"] -->
+    jax: ["input/TeX", "output/SVG"]
+  });
+</script>
+{% endif %}

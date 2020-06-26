@@ -1,8 +1,23 @@
-- name: Home
-  link: /
-- name: About
-  link: /about.html
-- name: Blog
-  link: /blog.html
-- name: Staff
-  link: /staff.html
+# - name: Home
+#   link: /
+# - name: About
+#   link: /about.html
+# - name: Blog
+#   link: /blog.html
+# - name: Staff
+#   link: /staff.html
+
+# main links
+main:
+  - title: "Home"
+    url: /
+  # - title: "Blogs"
+  #   url: /blogs/
+  - title: "Articles"
+    url: /articles/
+  - title: "Posts"
+    url: /posts/
+  - title: "About"
+    url: /about/
+  # - title: "Sitemap"
+  #   url: /sitemap/
