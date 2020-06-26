@@ -74,8 +74,8 @@ footer:
 #theme: minima
 #theme: jekyll-theme-hacker
 # theme: "minimal-mistakes-jekyll"
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme: "mmistakes/minimal-mistakes" # see [](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#remote-theme-method)
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 sass:
     # sass_dir: _sass
