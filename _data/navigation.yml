@@ -16,7 +16,8 @@ main:
   - title: "Articles"
     url: /articles/
   - title: "Posts"
-    url: /posts/
+    # url: /posts/
+    url: /diaries/
   - title: "About"
     url: /about/
   # - title: "Sitemap"
