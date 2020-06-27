@@ -5,6 +5,7 @@ title: "UWB双向测距误差分析"
 title-en: "UWB TWR Ranging Error Analysis"
 author: drivextech
 date: 2020-05-31 19:00:00 +0800
+last_modified_at: 2020-06-26 15:00:00 +0800
 categories: UWB
 excerpt_separator: <!--more-->
 ---

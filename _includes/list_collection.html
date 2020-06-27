@@ -1,0 +1,14 @@
+
+{% for page in include.collection %}
+    {% assign page_file_name = page.url | split: "/" | last | downcase %}
+    {% if page_file_name == "index.html" %}
+    {% else %}
+    <div class="list__item">
+        <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+            <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+            <p class="archive__item-excerpt" itemprop="description">{{ page.excerpt }}</p>
+            <!-- <a href="{{ site.baseurl }}{{ page.url }}" class="read-more">Read More</a> -->
+        </article>
+    </div>
+    {% endif %}
+{% endfor %}
