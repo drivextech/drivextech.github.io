@@ -1,18 +1,16 @@
 ---
-layout: page
+# layout: page
+layout: single
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+[drivextech](https://github.com/drivextech) focuses on technologies for intelligent mobile robot.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+- low-level navigation capabilities:
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+    localization, mapping, SLAM, planning, etc.
 
+- high-level sensing/controlling capabilities:
 
-[jekyll-organization]: https://github.com/jekyll
+    smart semantic understanding, intelligent/model-free/adaptive controlling, etc.
