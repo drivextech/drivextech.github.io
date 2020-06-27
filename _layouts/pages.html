@@ -11,9 +11,15 @@ layout: default
       <h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].article | default: "Article" }}</h2>
       {% comment %}
       { % include list_collection.html collection=site.pages % }
+      { % include list_collection.html collection=site.articles % }
+      { % include list_collection.html collection=site.collections[page.collection] % }
       {% endcomment %}
-      {% include list_collection.html collection=site.articles %}
+      {% assign page_collecion = site.collections | where:'label',page.collection | first %}
+      {% comment %} Assert![ page_collecion.label == page.collection ] {% endcomment %}
+      {% include list_collection.html collection=page_collecion.docs %}
 
+    </div>
+    
     <!-- {% include paginator.html %} -->
 
 </div>
