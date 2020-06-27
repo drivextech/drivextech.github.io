@@ -196,6 +196,9 @@ collections:
   articles:
     output: true
     permalink: /:collection/:path.html
+  diaries: # can override posts
+    output: true
+    permalink: /:collection/:path.html
   posts: # can override posts
     # output: true
     permalink: /:collection/:path.html
@@ -227,6 +230,14 @@ defaults:
       type: articles
     values:
       layout: "single"
+      read_time: true
+      mathjax: true
+      comments: true
+  - scope:
+      path: ""
+      type: diaries
+    values:
+      layout: "post"
       read_time: true
       mathjax: true
       comments: true
