@@ -102,7 +102,7 @@ TWR(Two Way Ranging)，双向测距，指在测距过程中存在测距消息的
       <img src="imgs/ss-twr-tof-est.png">
     </p>
 
-    通常情况下，有，$t_A^S \gg tof$，$t_B^R \gg tof$，$t_A^S \simeq t_B^R$，另$t_D \triangleq (t_A^S \simeq t_B^R)$，从而
+    通常情况下，有，$t_A^S \gg tof$，$t_B^R \gg tof$，$t_A^S \simeq t_B^R$，令$t_D \triangleq (t_A^S \simeq t_B^R)$，从而
 
     <p align="center">
       <img src="imgs/ss-twr-tof-est-simplified.png">
