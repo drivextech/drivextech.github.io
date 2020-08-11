@@ -16,11 +16,7 @@ comments: false
 
     smart semantic understanding, intelligent/model-free/adaptive controlling, etc.
 
-<br/>
-
 ---
-
-<br/>
 
 <center>
 <img src="https://drivextech.github.io/business_card/business_card.png"/>
