@@ -391,6 +391,8 @@ The primary interface unit for a module must export all of the interface partiti
     - 简介包含导出声明：`export import <module-partition-name>`
 4. 一个模块可以包括多个模块接口分区，也可以包括多个模块实现单元(模块实现单元或模块实现分区单元)。
 
+
+<!--
 ### Refs
 
 - [C++20](https://en.wikipedia.org/wiki/C%2B%2B20)
@@ -409,3 +411,4 @@ The primary interface unit for a module must export all of the interface partiti
 - [Translation unit (programming)](https://en.wikipedia.org/wiki/Translation_unit_(programming))
 - [What is a “translation unit” in C++](https://stackoverflow.com/questions/1106149/what-is-a-translation-unit-in-c)
 - [C++20 Draft / module.private.frag](http://eel.is/c++draft/module.private.frag)
+-->
