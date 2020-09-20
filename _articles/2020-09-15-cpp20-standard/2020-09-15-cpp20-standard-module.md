@@ -5,14 +5,14 @@ title: "C++模块"
 title-en: "C++ Module"
 author: drivextech
 date: 2020-09-15 21:00:00 +0800
-last_modified_at: 2020-09-18 21:00:00 +0800
+last_modified_at: 2020-09-20 21:00:00 +0800
 categories: C++
 excerpt_separator: <!--more-->
 ---
 
 <!-- ## 摘要 -->
 
-C++ Module
+C++20标准中开始引入模块(module)的概念，用于解决传统的头文件包含机制在编译时间，工程代码组织等方面的问题，本文简要介绍C++20的模块机制及其使用说明或限制条件。
 
 <!--more-->
 
